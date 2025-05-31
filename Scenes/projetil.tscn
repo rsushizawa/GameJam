@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfffhrwbukknv"]
+
+[ext_resource type="Script" uid="uid://skx8t2su1yi3" path="res://Scripts/projetil.gd" id="1_3onwi"]
+[ext_resource type="Texture2D" uid="uid://bhwue6nbjj4cj" path="res://Scenes/icon.svg" id="1_gppq6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3onwi"]
+size = Vector2(32, 32)
+
+[node name="Projetil" type="Area2D"]
+script = ExtResource("1_3onwi")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -1.00001)
+scale = Vector2(0.257813, 0.257813)
+texture = ExtResource("1_gppq6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_3onwi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

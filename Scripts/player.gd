@@ -42,8 +42,6 @@ func _physics_process(delta):
 
 func take_damage(amount):
 	print("Player took damage: ", amount)
-	# Here you would implement logic for losing health.
-	# For now, any damage causes death.
 	die() 
 
 func die():
