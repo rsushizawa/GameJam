@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://75y71bqykse6"]
+[gd_scene load_steps=5 format=3 uid="uid://bs8gg1nmryndw"]
 
-[ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://j6c2o27bkbj7" path="res://Scenes/player.tscn" id="2_bo1nx"]
-[ext_resource type="Script" uid="uid://cb3570ox0ri67" path="res://Scripts/portal.gd" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://j6c2o27bkbj7" path="res://Scenes/player.tscn" id="1_mucu6"]
+[ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="2_ao6y5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1nx"]
-texture = ExtResource("1_jjgbg")
+texture = ExtResource("2_ao6y5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -139,12 +138,9 @@ texture = ExtResource("1_jjgbg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bo1nx")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
-size = Vector2(16, 50)
-
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("2_bo1nx")]
+[node name="Player" parent="." instance=ExtResource("1_mucu6")]
 position = Vector2(62, 8)
 disable_mode = 2
 
@@ -156,13 +152,4 @@ format = 2
 layer_0/name = "CHAO"
 layer_0/tile_data = PackedInt32Array(-65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65533, 0, 0, -65534, 0, 0, -65535, 0, 0, -65536, 0, 0, -1, 0, 0, -2, 0, 0, -3, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0, -65510, 0, 0, -65509, 0, 0, -262117, 393216, 3, -196581, 393216, 4, -131045, 393216, 5)
 layer_1/name = "CENARIO"
-
-[node name="portal" type="Area2D" parent="."]
-position = Vector2(420, 55)
-script = ExtResource("3_8gbba")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
-position = Vector2(6, -6)
-shape = SubResource("RectangleShape2D_bo1nx")
-
-[connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]
+layer_1/tile_data = PackedInt32Array(-262124, 327680, 3, -196588, 327680, 4, -131052, 327680, 5, -262127, 327680, 3, -196591, 327680, 4, -131055, 327680, 5, -262131, 327680, 3, -196595, 327680, 4, -131059, 327680, 5, -262135, 327680, 3, -196599, 327680, 4, -131063, 327680, 5)
