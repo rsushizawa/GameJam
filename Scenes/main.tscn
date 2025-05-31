@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://75y71bqykse6"]
+[gd_scene load_steps=8 format=3 uid="uid://75y71bqykse6"]
 
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://c1cdm3rjfv4gg" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bi1671vxr7m78" path="res://Scenes/dead_body.tscn" id="3_jjvhh"]
@@ -142,6 +143,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bo1nx")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_kry3j")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8gbba")
@@ -149,6 +151,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(262144, 65536, 1, 262145, 65536, 1, 262146, 65536, 1, 262147, 65536, 1, 262148, 65536, 1, 262149, 65536, 1, 262150, 65536, 1, 262151, 65536, 1, 262152, 65536, 1, 262153, 65536, 1, 262154, 65536, 1, 262155, 65536, 1, 262156, 65536, 1, 262157, 65536, 1, 262158, 65536, 1, 262159, 65536, 1, 262160, 65536, 1, 262161, 65536, 1, 262162, 65536, 1, 262163, 65536, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_bo1nx")]
+unique_name_in_owner = true
 position = Vector2(65, 37)
 dead_body_scene = ExtResource("3_jjvhh")
 

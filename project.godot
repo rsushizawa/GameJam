@@ -15,6 +15,10 @@ run/main_scene="uid://75y71bqykse6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DeadBodyManager="*res://Scripts/DeadBodyManager.gd"
+
 [display]
 
 window/size/viewport_width=480

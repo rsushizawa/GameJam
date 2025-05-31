@@ -48,39 +48,12 @@ func take_damage(amount):
 
 func die():
 	print("Player died!")
-
+	
 	if dead_body_scene:
-		# 1. Create an instance of the DeadBody
-		var body_instance = dead_body_scene.instantiate()
-		var player_position = global_position
-		# 2. Set its position and orientation
-		print("Player global position at death: ",player_position)
-		body_instance.global_position.y = player_position.y - $CollisionShape2D.shape.size.y * scale.y
-		body_instance.global_position.x = player_position.x
-		if body_instance.has_node("Sprite2D"): # Check if DeadBody has a Sprite2D
-			body_instance.get_node("Sprite2D").flip_h = $Sprite2D.flip_h # Match player's flip
-		
-		# 3. Add the dead body to the current scene (the level)
-		#    get_parent() assumes player is a direct child of the level.
-		#    If not, get_tree().current_scene.add_child(body_instance) is safer.
-		get_tree().current_scene.add_child(body_instance) 
-		
-		
-		print("Player global position at death: ",global_position)
-		print("Dead body spawned at: ", body_instance.global_position)
-	else:
-		print("WARNING: DeadBody scene not set in Player script.")
-
+		var player_death_position = global_position
+		var player_current_velocity = velocity 
+		DeadBodyManager.request_spawn_dead_body(self,$CollisionShape2D,player_death_position,player_current_velocity)
 	# 4. Respawn the player
 	global_position = spawn_position
 	velocity = Vector2.ZERO # Reset velocity
-	# You might need to reset other states here (e.g., health, animation state)
-	
-	# Optional: If you have a specific "idle" or "respawn" animation
-	# if $AnimatedSprite2D.has_animation("idle"):
-	#    $AnimatedSprite2D.play("idle")
-
 	print("Player respawned at: ", global_position)
-
-	# Instead of reloading the whole scene:
-	# get_tree().reload_current_scene() # This would remove the dead body too
