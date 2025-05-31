@@ -51,7 +51,7 @@ func die():
 	
 	if dead_body_scene:
 		var player_death_position = global_position
-		var player_current_velocity = velocity 
+		var player_current_velocity = Vector2.ZERO
 		DeadBodyManager.request_spawn_dead_body(self,$CollisionShape2D,player_death_position,player_current_velocity)
 	# 4. Respawn the player
 	global_position = spawn_position

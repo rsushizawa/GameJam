@@ -7,7 +7,7 @@
 size = Vector2(32, 9)
 
 [node name="DeadBody" type="RigidBody2D"]
-mass = 0.077
+mass = 0.169
 script = ExtResource("1_fagme")
 
 [node name="Icon" type="Sprite2D" parent="."]
