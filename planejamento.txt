@@ -1,0 +1,55 @@
+TEMA: TEMPO
+
+
+puzzle plataforma 2d
+
+quando vc morre corpo fica
+
+PRINCIPAIS MECÂNICAS:
+ 1 - controlar o último corpo (cumpriu com o tema)
+ 2 - consegue explodir o corpo (impulsionar o jogador para cima, abrir caminhos)
+ 3 - jogador pode empurrar seu corpo morto
+
+AMBIENTE
+
+
+HISTÓRIA
+um necromante selado que está tentando abrir os selos da sua maldição, para fazer isso ele atravessa portais.
+
+Mecânica
+- sistema de pontuação no final das fases 
+- no portal final, para atravessar e zerar o jogo, é  necessário pegar todos os itens do mapa.
+- toda faze tem um limite de corpos diferentes, e crescente. que vai aparecendo na UI.
+- com 6 corpos ou mais, o último corpo começa a destruir.
+- cutscene no começo que ela cai no espinho e renasce do lado.
+- IA parada com trigger, que atira a cada X segundos no player. o tiro atravessa construções.
+- para desativar a IA o jogador tem que interagir com o objeto do cenário (alavanca)
+- jogador pode se matar com alguma tecla.
+- pular em cima do corpo faz ele sumir;
+
+
+UI
+- tela de inicio do jogo. (com opção de jogar e de crédito/portfolio/contato)
+- tela de seleção de fase.
+- tela de fim de fase. (botão de ir pra próxima fase, botão de voltar pra seleção de fase, botão de re-jogar a fase, mostrar a pontuação final do jogador
+exemplo: passou com 5 mortes ganha 3 estrelas, passou com 10 2 estrelas, com +10 3 estrelas.)
+- contador de mortes;
+- limite de corpo e contador de corpos(talvez colocar 2/5 corpos);
+- barrinha de "vida"(timer) dos corpos
+
+INIMIGOS:
+
+GOLEM
+- possui um trigger circular enorme, pega metade do mapa, e fica parado no local do mapa.
+- ao entrar no trigger, solta um projetil que SEMPRE irá acertar o jogador. esse projetil atravessa qualquer estrutura e segue o player.
+- tem um cd para dar o próximo tiro. (ideia é ser rápido, morrer e fazer o caminho novamente antes dele atirar de novo)
+- ao interagir com a alavanca, ele desativa.
+
+FADA
+- possui um trigger em cone pra frente ( imita visão)
+- ao entrar no trigger, solta um projetil na direção do jogador. 
+- jogador pode esquivar agachando ou pulando.
+- ao certar o tiro, teletransporta o jogador para um local especifico.
+- ter algo visual indicando o local (exemplo: se o bastão mágico dela estiver verde, vai pro inicio da fase, amarelo da tp em algum lugar.)
+- atravessar por sinos, faz ela mudar o trajeto.
+
