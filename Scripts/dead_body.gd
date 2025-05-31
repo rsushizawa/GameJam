@@ -12,13 +12,6 @@ func _ready():
 	if lifespan_timer:
 		lifespan_timer.timeout.connect(_on_LifespanTimer_timeout)
 func _on_LifespanTimer_timeout():
+	DeadBodyManager.cleanup_invalid_bodies()
 	about_to_despawn.emit(self) # Emit the signal *before* queue_free
 	queue_free() # Remove the dead body from the scene
-
-# You can keep or add an initialize function if the DeadBodyManager needs
-# to pass initial velocity, sprite flip, etc.
-func initialize_body(initial_velocity: Vector2, sprite_flip_h: bool):
-	self.linear_velocity = initial_velocity
-	var sprite_node = get_node_or_null("Sprite2D") # Adjust path if needed
-	if sprite_node and sprite_node is Sprite2D:
-		sprite_node.flip_h = sprite_flip_h
