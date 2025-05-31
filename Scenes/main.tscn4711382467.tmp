@@ -138,7 +138,8 @@ texture = ExtResource("1_jjgbg")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8gbba"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 15
 sources/0 = SubResource("TileSetAtlasSource_bo1nx")
 
 [node name="Main" type="Node2D"]
@@ -150,6 +151,9 @@ layer_0/tile_data = PackedInt32Array(262144, 65536, 1, 262145, 65536, 1, 262146,
 
 [node name="Player" parent="." instance=ExtResource("2_bo1nx")]
 position = Vector2(65, 37)
+speed = null
+jump_velocity = null
+gravity = null
 dead_body_scene = ExtResource("3_jjvhh")
 
 [node name="Spike" parent="." instance=ExtResource("3_8gbba")]
