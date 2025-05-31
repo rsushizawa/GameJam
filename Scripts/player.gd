@@ -55,7 +55,8 @@ func die():
 		var player_position = global_position
 		# 2. Set its position and orientation
 		print("Player global position at death: ",player_position)
-		body_instance.global_position = player_position
+		body_instance.global_position.y = player_position.y - $CollisionShape2D.shape.size.y * scale.y
+		body_instance.global_position.x = player_position.x
 		if body_instance.has_node("Sprite2D"): # Check if DeadBody has a Sprite2D
 			body_instance.get_node("Sprite2D").flip_h = $Sprite2D.flip_h # Match player's flip
 		
@@ -63,6 +64,7 @@ func die():
 		#    get_parent() assumes player is a direct child of the level.
 		#    If not, get_tree().current_scene.add_child(body_instance) is safer.
 		get_tree().current_scene.add_child(body_instance) 
+		
 		
 		print("Player global position at death: ",global_position)
 		print("Dead body spawned at: ", body_instance.global_position)
