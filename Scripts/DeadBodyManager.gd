@@ -8,7 +8,7 @@ enum Body_States {NORMAL,FREEZE}
 var state: Body_States = Body_States.NORMAL
 # Call this function to spawn a new dead body
 func request_spawn_dead_body(_body: Node2D,_colisionshape: Node2D, spawn_position: Vector2, initial_velocity: Vector2):
-	var dead_body_nodes = get_tree().get_nodes_in_group("Dead_Body")
+	var dead_body_nodes = get_tree().get_nodes_in_group("DeadBody")
 	var active_bodies: Array[Node] = dead_body_nodes # To store references to active dead bodies
 	if not dead_body_scene:
 		print("DeadBodyManager: dead_body_scene is not set!")

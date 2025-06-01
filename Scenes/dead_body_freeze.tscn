@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uicl5"]
 size = Vector2(46, 7)
 
-[node name="dead_body_freeze" type="StaticBody2D"]
+[node name="dead_body_freeze" type="StaticBody2D" groups=["DeadBody", "DeadBodyFreeze"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -15,4 +15,4 @@ texture = ExtResource("1_3qyws")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uicl5")
 
-[node name="Camera2D" type="Camera2D" parent="." groups=["DeadBody", "DeadBodyFreeze"]]
+[node name="Camera2D" type="Camera2D" parent="."]

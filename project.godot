@@ -23,3 +23,9 @@ DeadBodyManager="*res://Scripts/DeadBodyManager.gd"
 
 window/size/viewport_width=480
 window/size/viewport_height=270
+
+[global_group]
+
+DeadBody=""
+DeadBodyFreeze=""
+Player=""

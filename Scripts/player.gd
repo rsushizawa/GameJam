@@ -23,10 +23,12 @@ func _ready():
 		spawn_position = global_position # Fallback to initial position if no SpawnPoint
 
 	# Add player to a group if you haven't already (useful for spike detection etc.)
-	add_to_group("player")
+	add_to_group("Player")
 
 
 func _physics_process(delta):
+	dead_body_freeze_nodes = get_tree().get_nodes_in_group("DeadBodyFreeze")
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -41,13 +43,14 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	if Input.is_key_pressed(KEY_Q):
-		if dead_body_freeze_nodes.size() < 1:
+		if dead_body_freeze_nodes.is_empty():
 			DeadBodyManager.state = DeadBodyManager.Body_States.FREEZE
 		else:
 			DeadBodyManager.state = DeadBodyManager.Body_States.NORMAL
-	elif Input.is_key_pressed(KEY_E):
+	elif not dead_body_freeze_nodes.is_empty():
 		DeadBodyManager.state = DeadBodyManager.Body_States.NORMAL
-
+	if Input.is_key_pressed(KEY_E):
+		DeadBodyManager.state = DeadBodyManager.Body_States.NORMAL
 
 	move_and_slide()
 

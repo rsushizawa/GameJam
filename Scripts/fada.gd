@@ -2,7 +2,7 @@ extends AnimatableBody2D
 
 const PROJETIL = preload("res://Scenes/projetil.tscn")
 @onready var timer: Timer = %FadaTimer
-@onready var player_nodes = get_tree().get_nodes_in_group("player")
+@onready var player_nodes = get_tree().get_nodes_in_group("Player")
 
 @export var point_a_path: NodePath
 @export var point_b_path: NodePath
@@ -32,13 +32,13 @@ func _on_timer_timeout() -> void:
 	timer.start()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		if timer.is_stopped():
 			print("Player Entered Fada Area 2D firing")
 			timer.start()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		if not timer.is_stopped():
 			print("Player Exited Fada Area 2D stoped firing")
 			timer.stop()
