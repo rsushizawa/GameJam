@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://75y71bqykse6"]
+[gd_scene load_steps=8 format=3 uid="uid://75y71bqykse6"]
 
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://c1cdm3rjfv4gg" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://bi1671vxr7m78" path="res://Scenes/dead_body.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/fada.tscn" id="6_21xkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1nx"]
@@ -154,7 +153,6 @@ layer_0/tile_data = PackedInt32Array(262144, 65536, 1, 262145, 65536, 1, 262146,
 [node name="Player" parent="." instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
 position = Vector2(-86, -93)
-dead_body_scene = ExtResource("3_jjvhh")
 
 [node name="Spike" parent="." instance=ExtResource("3_8gbba")]
 position = Vector2(165, 41)

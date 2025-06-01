@@ -7,9 +7,11 @@ extends CharacterBody2D
 
 # Preload the DeadBody scene so we can instance it
 @export var dead_body_scene: PackedScene # Drag DeadBody.tscn here in the Inspector
-
+@export var dead_body_freeze_scene: PackedScene # Drag DeadBody.tscn here in the Inspector
 # You might want to get the spawn point dynamically or have a default
 var spawn_position = Vector2.ZERO # Default spawn, will be updated
+
+@onready var dead_body_freeze_nodes = get_tree().get_nodes_in_group("DeadBodyFreeze")
 
 func _ready():
 	# Attempt to find the SpawnPoint in the current level when the player is ready
@@ -37,6 +39,15 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = direction < 0 # Assuming Sprite2D is your player's sprite
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+
+	if Input.is_key_pressed(KEY_Q):
+		if dead_body_freeze_nodes.size() < 1:
+			DeadBodyManager.state = DeadBodyManager.Body_States.FREEZE
+		else:
+			DeadBodyManager.state = DeadBodyManager.Body_States.NORMAL
+	elif Input.is_key_pressed(KEY_E):
+		DeadBodyManager.state = DeadBodyManager.Body_States.NORMAL
+
 
 	move_and_slide()
 

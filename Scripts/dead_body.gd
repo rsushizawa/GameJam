@@ -12,6 +12,5 @@ func _ready():
 	if lifespan_timer:
 		lifespan_timer.timeout.connect(_on_LifespanTimer_timeout)
 func _on_LifespanTimer_timeout():
-	DeadBodyManager.cleanup_invalid_bodies()
 	about_to_despawn.emit(self) # Emit the signal *before* queue_free
 	queue_free() # Remove the dead body from the scene
