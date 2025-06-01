@@ -1,10 +1,10 @@
 extends Area2D
 
-@export var fada: Node2D
+@export var golem: Node2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Entered Lever")
-		if fada.has_method("sleep"):
-			fada.sleep()
+		if golem.has_method("sleep"):
+			golem.sleep()
 			print("Fada put to sleep")

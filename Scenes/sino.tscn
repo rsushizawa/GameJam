@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr28rcwcfar0x"]
+
+[ext_resource type="Texture2D" uid="uid://bhwue6nbjj4cj" path="res://Scenes/icon.svg" id="1_12usc"]
+[ext_resource type="Script" uid="uid://d2wejr56xt4n7" path="res://Scripts/sino.gd" id="1_s8ygj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8ygj"]
+size = Vector2(4, 4)
+
+[node name="Sino" type="Area2D"]
+script = ExtResource("1_s8ygj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0234375, 0.0234375)
+texture = ExtResource("1_12usc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s8ygj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -67,7 +67,7 @@ func die() -> void:
 	var player_death_position = global_position
 	var player_current_velocity = Vector2.ZERO
 	if is_instance_valid(collision_shape_2d):
-		collision_shape_2d.disabled = true
+		collision_shape_2d.call_deferred("set_disabled", true)
 	await get_tree().physics_frame
 	if dead_body_scene:
 		DeadBodyManager.call_deferred("request_spawn_dead_body",

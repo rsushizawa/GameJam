@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnvrusyclpayn"]
+[gd_scene load_steps=12 format=3 uid="uid://dnvrusyclpayn"]
 
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_w4vb6"]
 [ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="2_no3m6"]
-[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/golem.tscn" id="3_xrk3d"]
+[ext_resource type="PackedScene" uid="uid://eqxoet8jvdj7" path="res://Scenes/golem.tscn" id="3_xrk3d"]
 [ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="4_m7ub0"]
 [ext_resource type="PackedScene" uid="uid://drlrfgusiawgh" path="res://Scenes/portal.tscn" id="5_bs45f"]
 [ext_resource type="PackedScene" uid="uid://f5buhkdsab0x" path="res://Scenes/item.tscn" id="6_kjgd2"]
 [ext_resource type="PackedScene" uid="uid://j01487ltwh4y" path="res://Scenes/alavanca.tscn" id="7_qtsfj"]
+[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/fada.tscn" id="8_xrk3d"]
+[ext_resource type="PackedScene" uid="uid://dr28rcwcfar0x" path="res://Scenes/sino.tscn" id="9_m7ub0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qp627"]
 texture = ExtResource("1_w4vb6")
@@ -157,9 +159,6 @@ position = Vector2(165, 41)
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-87, -94)
 
-[node name="Fada" parent="." instance=ExtResource("3_xrk3d")]
-position = Vector2(275, 30)
-
 [node name="Player" parent="." instance=ExtResource("4_m7ub0")]
 position = Vector2(-83, -97)
 
@@ -173,6 +172,16 @@ position = Vector2(57, 18)
 [node name="Item2" parent="." instance=ExtResource("6_kjgd2")]
 position = Vector2(-27, -39)
 
-[node name="Alavanca" parent="." node_paths=PackedStringArray("fada") instance=ExtResource("7_qtsfj")]
+[node name="Alavanca" parent="." node_paths=PackedStringArray("golem") instance=ExtResource("7_qtsfj")]
 position = Vector2(559, 28)
-fada = NodePath("../Fada")
+golem = NodePath("../golem")
+
+[node name="golem" parent="." instance=ExtResource("3_xrk3d")]
+position = Vector2(217, 51)
+
+[node name="Sino" parent="." node_paths=PackedStringArray("fada_node") instance=ExtResource("9_m7ub0")]
+position = Vector2(417, 35)
+fada_node = NodePath("../fada")
+
+[node name="fada" parent="." instance=ExtResource("8_xrk3d")]
+position = Vector2(315, -98)
