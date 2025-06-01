@@ -4,26 +4,27 @@
 [ext_resource type="Texture2D" uid="uid://gvdatt5v88bn" path="res://icon.svg" id="2_2mnih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhxds"]
-size = Vector2(31, 30)
+size = Vector2(42, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hotg"]
-size = Vector2(38, 36)
+size = Vector2(38, 4)
 
 [node name="Spike" type="StaticBody2D"]
 script = ExtResource("1_1hotg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_fhxds")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 0.999999)
-scale = Vector2(0.292969, 0.281011)
+position = Vector2(-4.76837e-07, -2)
+scale = Vector2(0.292969, 0.03125)
 texture = ExtResource("2_2mnih")
 
 [node name="Dmg" type="Area2D" parent="."]
 
 [node name="CollisionShape2DDmg" type="CollisionShape2D" parent="Dmg"]
-position = Vector2(0, 1)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_1hotg")
 
 [connection signal="body_entered" from="Dmg" to="." method="_on_dmg_body_entered"]
