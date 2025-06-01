@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dleek3bm1c0d1"]
+[gd_scene load_steps=5 format=3 uid="uid://eqxoet8jvdj7"]
 
 [ext_resource type="Script" uid="uid://dywfotcmwiiu8" path="res://Scripts/golem.gd" id="1_6uy08"]
 [ext_resource type="Texture2D" uid="uid://bjo4532uyt5xa" path="res://Assets/golem.png" id="2_6uy08"]
@@ -11,8 +11,6 @@ radius = 101.045
 
 [node name="golem" type="AnimatableBody2D"]
 script = ExtResource("1_6uy08")
-point_a_path = NodePath("START")
-point_b_path = NodePath("END")
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.047089, 0.047089)
@@ -24,20 +22,13 @@ shape = SubResource("RectangleShape2D_iifwq")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="FadaTimer" type="Timer" parent="Area2D"]
-unique_name_in_owner = true
+[node name="golemTimer" type="Timer" parent="Area2D"]
 wait_time = 2.0
+one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6uy08")
 
-[node name="START" type="Marker2D" parent="."]
-position = Vector2(100, 0)
-rotation = -3.14159
-
-[node name="END" type="Marker2D" parent="."]
-position = Vector2(-100, 0)
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="Area2D/FadaTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/golemTimer" to="." method="_on_golem_timer_timeout"]

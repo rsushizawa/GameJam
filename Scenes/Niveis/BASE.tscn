@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnvrusyclpayn"]
+[gd_scene load_steps=12 format=3 uid="uid://dnvrusyclpayn"]
 
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_w4vb6"]
 [ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="2_no3m6"]
-[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/golem.tscn" id="3_xrk3d"]
+[ext_resource type="PackedScene" uid="uid://eqxoet8jvdj7" path="res://Scenes/golem.tscn" id="3_xrk3d"]
 [ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="4_m7ub0"]
 [ext_resource type="PackedScene" uid="uid://drlrfgusiawgh" path="res://Scenes/portal.tscn" id="5_bs45f"]
 [ext_resource type="PackedScene" uid="uid://f5buhkdsab0x" path="res://Scenes/item.tscn" id="6_kjgd2"]
 [ext_resource type="PackedScene" uid="uid://j01487ltwh4y" path="res://Scenes/alavanca.tscn" id="7_qtsfj"]
+[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/fada.tscn" id="8_xrk3d"]
+[ext_resource type="PackedScene" uid="uid://dr28rcwcfar0x" path="res://Scenes/sino.tscn" id="9_m7ub0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qp627"]
 texture = ExtResource("1_w4vb6")
@@ -152,13 +154,10 @@ format = 2
 layer_0/tile_data = PackedInt32Array(262144, 65536, 1, 262145, 65536, 1, 262146, 65536, 1, 262147, 65536, 1, 262148, 65536, 1, 262149, 65536, 1, 262150, 65536, 1, 262151, 65536, 1, 262152, 65536, 1, 262153, 65536, 1, 262154, 65536, 1, 262155, 65536, 1, 262156, 65536, 1, 262157, 65536, 1, 262158, 65536, 1, 262159, 65536, 1, 262160, 65536, 1, 262161, 65536, 1, 262162, 65536, 1, 262163, 65536, 1, 196608, 65536, 1, 262143, 65536, 1, 196607, 65536, 1, 196606, 65536, 1, 131070, 65536, 1, 131069, 65536, 1, 65533, 65536, 1, 65532, 65536, 1, -4, 65536, 1, -65541, 65536, 1, -131077, 65536, 1, -131078, 65536, 1, -196614, 65536, 1, -196615, 65536, 1, -262152, 65536, 1, -196616, 65536, 1, -131079, 65536, 1, -5, 65536, 1, 262164, 65536, 1, 262165, 65536, 1, 262166, 65536, 1, 262167, 65536, 1, 262168, 65536, 1, 262169, 65536, 1, 262170, 65536, 1, 262171, 65536, 1, 262172, 65536, 1, 262173, 65536, 1, 262174, 65536, 1, 262175, 65536, 1, 262176, 65536, 1, 262177, 65536, 1, 262178, 65536, 1, 262179, 65536, 1, 262180, 65536, 1, 262181, 65536, 1, 262182, 65536, 1, 262183, 65536, 1, 262184, 65536, 1, 262185, 65536, 1, 262186, 65536, 1, 262187, 65536, 1)
 
 [node name="Spike" parent="." instance=ExtResource("2_no3m6")]
-position = Vector2(165, 41)
+position = Vector2(148, 63)
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-87, -94)
-
-[node name="Fada" parent="." instance=ExtResource("3_xrk3d")]
-position = Vector2(275, 30)
 
 [node name="Player" parent="." instance=ExtResource("4_m7ub0")]
 position = Vector2(-83, -97)
@@ -168,11 +167,38 @@ position = Vector2(684, 24)
 next_level_scene_path = "uid://bar2xwi0r2dty"
 
 [node name="Item" parent="." instance=ExtResource("6_kjgd2")]
-position = Vector2(57, 18)
+position = Vector2(52, 21)
 
 [node name="Item2" parent="." instance=ExtResource("6_kjgd2")]
-position = Vector2(-27, -39)
+position = Vector2(457, 16)
 
-[node name="Alavanca" parent="." node_paths=PackedStringArray("fada") instance=ExtResource("7_qtsfj")]
+[node name="Alavanca" parent="." node_paths=PackedStringArray("golem") instance=ExtResource("7_qtsfj")]
 position = Vector2(559, 28)
-fada = NodePath("../Fada")
+golem = NodePath("../golem")
+
+[node name="golem" parent="." instance=ExtResource("3_xrk3d")]
+position = Vector2(255, 56)
+
+[node name="Sino" parent="." node_paths=PackedStringArray("fada_node") instance=ExtResource("9_m7ub0")]
+position = Vector2(417, 35)
+fada_node = NodePath("../fada")
+
+[node name="POINT_A_PATH1" type="Marker2D" parent="."]
+position = Vector2(235, 30)
+rotation = -3.14159
+
+[node name="POINT_B_PATH1" type="Marker2D" parent="."]
+position = Vector2(475, 30)
+
+[node name="POINT_C_PATH2" type="Marker2D" parent="."]
+position = Vector2(255, -20)
+
+[node name="POINT_D_PATH2" type="Marker2D" parent="."]
+position = Vector2(455, -20)
+
+[node name="fada" parent="." instance=ExtResource("8_xrk3d")]
+position = Vector2(355, 30)
+point_a_path = NodePath("../POINT_A_PATH1")
+point_b_path = NodePath("../POINT_B_PATH1")
+point_c_path = NodePath("../POINT_C_PATH2")
+point_d_path = NodePath("../POINT_D_PATH2")
