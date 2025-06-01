@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dleek3bm1c0d1"]
 
 [ext_resource type="Script" uid="uid://dywfotcmwiiu8" path="res://Scripts/fada.gd" id="1_6uy08"]
-[ext_resource type="Texture2D" uid="uid://bhwue6nbjj4cj" path="res://Scenes/icon.svg" id="1_nxrhy"]
+[ext_resource type="Texture2D" uid="uid://38i6p1f74frg" path="res://Assets/fada.png" id="2_6uy08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6uy08"]
 size = Vector2(62, 63)
@@ -13,9 +13,9 @@ radius = 311.002
 script = ExtResource("1_6uy08")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-2, 0.999996)
-scale = Vector2(0.492188, 0.492188)
-texture = ExtResource("1_nxrhy")
+position = Vector2(-0.794972, 2.7804)
+scale = Vector2(0.107054, 0.107054)
+texture = ExtResource("2_6uy08")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0.5)

@@ -171,7 +171,7 @@ position = Vector2(-45, 171)
 next_level_scene_path = "uid://dixajdq531lss"
 
 [node name="fada" parent="." instance=ExtResource("3_fmsmh")]
-position = Vector2(-527, 315)
+position = Vector2(-502, 307)
 point_a_path = NodePath("../A")
 point_b_path = NodePath("../B")
 point_c_path = NodePath("../C")
@@ -181,7 +181,7 @@ point_d_path = NodePath("../D")
 position = Vector2(-350, 319)
 
 [node name="A" type="Marker2D" parent="."]
-position = Vector2(-454, 321)
+position = Vector2(-431, 315)
 
 [node name="B" type="Marker2D" parent="."]
 position = Vector2(-591, 318)

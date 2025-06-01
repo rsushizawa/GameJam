@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://uv3y6r3wsu6"]
+[gd_scene load_steps=12 format=3 uid="uid://uv3y6r3wsu6"]
 
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_w4vb6"]
 [ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="2_no3m6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://drlrfgusiawgh" path="res://Scenes/portal.tscn" id="5_bs45f"]
 [ext_resource type="PackedScene" uid="uid://f5buhkdsab0x" path="res://Scenes/item.tscn" id="6_kjgd2"]
 [ext_resource type="PackedScene" uid="uid://j01487ltwh4y" path="res://Scenes/alavanca.tscn" id="7_qtsfj"]
+[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/fada.tscn" id="8_xrk3d"]
 [ext_resource type="PackedScene" uid="uid://dr28rcwcfar0x" path="res://Scenes/sino.tscn" id="9_m7ub0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qp627"]
@@ -161,6 +162,8 @@ position = Vector2(-87, -94)
 [node name="Player" parent="." instance=ExtResource("4_m7ub0")]
 position = Vector2(-83, -97)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [node name="Portal" parent="." instance=ExtResource("5_bs45f")]
 position = Vector2(683, 39)
 next_level_scene_path = "uid://bar2xwi0r2dty"
@@ -181,15 +184,22 @@ position = Vector2(255, 56)
 [node name="Sino" parent="." instance=ExtResource("9_m7ub0")]
 position = Vector2(413, 6)
 
+[node name="fada" parent="." instance=ExtResource("8_xrk3d")]
+position = Vector2(372, -96)
+point_a_path = NodePath("../POINT_A_PATH1")
+point_b_path = NodePath("../POINT_B_PATH1")
+point_c_path = NodePath("../POINT_C_PATH2")
+point_d_path = NodePath("../POINT_D_PATH2")
+
 [node name="POINT_A_PATH1" type="Marker2D" parent="."]
-position = Vector2(235, 30)
+position = Vector2(266, -50)
 rotation = -3.14159
 
 [node name="POINT_B_PATH1" type="Marker2D" parent="."]
-position = Vector2(475, 30)
+position = Vector2(461, -50)
 
 [node name="POINT_C_PATH2" type="Marker2D" parent="."]
-position = Vector2(255, -20)
+position = Vector2(308, -144)
 
 [node name="POINT_D_PATH2" type="Marker2D" parent="."]
-position = Vector2(455, -20)
+position = Vector2(449, -137)

@@ -178,5 +178,6 @@ position = Vector2(-122, 356)
 position = Vector2(-157, 479)
 scale = Vector2(4, 4)
 
-[node name="Alavanca" parent="." instance=ExtResource("4_d6qkt")]
+[node name="Alavanca" parent="." node_paths=PackedStringArray("golem") instance=ExtResource("4_d6qkt")]
 position = Vector2(-465, 332)
+golem = NodePath("../golem")
