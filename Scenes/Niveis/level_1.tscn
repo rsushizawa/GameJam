@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpgi8fuumaap7"]
+[gd_scene load_steps=8 format=3 uid="uid://dnvrusyclpayn"]
 
-[ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/fada.tscn" id="6_21xkr"]
+[ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_rcdo1"]
+[ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="2_dvkc1"]
+[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/fada.tscn" id="3_qp627"]
+[ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="4_ir1uw"]
+[ext_resource type="PackedScene" uid="uid://drlrfgusiawgh" path="res://Scenes/portal.tscn" id="5_dvkc1"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
-texture = ExtResource("1_jjgbg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qp627"]
+texture = ExtResource("1_rcdo1")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -137,25 +138,29 @@ texture = ExtResource("1_jjgbg")
 2:15/0 = 0
 3:15/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_8gbba"]
+[sub_resource type="TileSet" id="TileSet_124iw"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_jjvhh")
+sources/0 = SubResource("TileSetAtlasSource_qp627")
 
-[node name="Main" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_8gbba")
+tile_set = SubResource("TileSet_124iw")
 format = 2
 layer_0/tile_data = PackedInt32Array(262144, 65536, 1, 262145, 65536, 1, 262146, 65536, 1, 262147, 65536, 1, 262148, 65536, 1, 262149, 65536, 1, 262150, 65536, 1, 262151, 65536, 1, 262152, 65536, 1, 262153, 65536, 1, 262154, 65536, 1, 262155, 65536, 1, 262156, 65536, 1, 262157, 65536, 1, 262158, 65536, 1, 262159, 65536, 1, 262160, 65536, 1, 262161, 65536, 1, 262162, 65536, 1, 262163, 65536, 1, 196608, 65536, 1, 262143, 65536, 1, 196607, 65536, 1, 196606, 65536, 1, 131070, 65536, 1, 131069, 65536, 1, 65533, 65536, 1, 65532, 65536, 1, -4, 65536, 1, -65541, 65536, 1, -131077, 65536, 1, -131078, 65536, 1, -196614, 65536, 1, -196615, 65536, 1, -262152, 65536, 1, -196616, 65536, 1, -131079, 65536, 1, -5, 65536, 1, 262164, 65536, 1, 262165, 65536, 1, 262166, 65536, 1, 262167, 65536, 1, 262168, 65536, 1, 262169, 65536, 1, 262170, 65536, 1, 262171, 65536, 1, 262172, 65536, 1, 262173, 65536, 1, 262174, 65536, 1, 262175, 65536, 1, 262176, 65536, 1, 262177, 65536, 1, 262178, 65536, 1, 262179, 65536, 1, 262180, 65536, 1, 262181, 65536, 1, 262182, 65536, 1, 262183, 65536, 1, 262184, 65536, 1, 262185, 65536, 1, 262186, 65536, 1, 262187, 65536, 1)
 
-[node name="Spike" parent="." instance=ExtResource("3_8gbba")]
+[node name="Spike" parent="." instance=ExtResource("2_dvkc1")]
 position = Vector2(165, 41)
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-87, -94)
 
-[node name="Fada" parent="." instance=ExtResource("6_21xkr")]
+[node name="Fada" parent="." instance=ExtResource("3_qp627")]
 position = Vector2(275, 30)
 
-[node name="Player" parent="." instance=ExtResource("2_bo1nx")]
+[node name="Player" parent="." instance=ExtResource("4_ir1uw")]
 position = Vector2(-83, -97)
+
+[node name="Portal" parent="." instance=ExtResource("5_dvkc1")]
+position = Vector2(684, 24)
+next_level_scene_path = "uid://bar2xwi0r2dty"
