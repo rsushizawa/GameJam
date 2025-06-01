@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2jh04lx21h8p"]
+[gd_scene load_steps=7 format=3 uid="uid://d2jh04lx21h8p"]
 
 [ext_resource type="Script" uid="uid://cs4o2niq22k3i" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bi1671vxr7m78" path="res://Scenes/dead_body.tscn" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://cw13uyslboapm" path="res://Scenes/dead_body_freeze.tscn" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://gl3n2gjpx6yh" path="res://Assets/mago idle.png" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://6u8l25evotun" path="res://Assets/Sound/slap-hurt-pain-sound-effect-262618.mp3" id="5_fkybt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
-size = Vector2(46, 46)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkybt"]
+height = 58.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_cvnsp")
@@ -20,7 +21,9 @@ texture = ExtResource("4_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-shape = SubResource("RectangleShape2D_vgqql")
+shape = SubResource("CapsuleShape2D_fkybt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fkybt")

@@ -163,7 +163,7 @@ position = Vector2(-87, -94)
 position = Vector2(-83, -97)
 
 [node name="Portal" parent="." instance=ExtResource("5_bs45f")]
-position = Vector2(684, 24)
+position = Vector2(683, 39)
 next_level_scene_path = "uid://bar2xwi0r2dty"
 
 [node name="Item" parent="." instance=ExtResource("6_kjgd2")]
@@ -179,9 +179,8 @@ golem = NodePath("../golem")
 [node name="golem" parent="." instance=ExtResource("3_xrk3d")]
 position = Vector2(255, 56)
 
-[node name="Sino" parent="." node_paths=PackedStringArray("fada_node") instance=ExtResource("9_m7ub0")]
-position = Vector2(417, 35)
-fada_node = NodePath("../fada")
+[node name="Sino" parent="." instance=ExtResource("9_m7ub0")]
+position = Vector2(413, 6)
 
 [node name="POINT_A_PATH1" type="Marker2D" parent="."]
 position = Vector2(235, 30)
@@ -197,8 +196,4 @@ position = Vector2(255, -20)
 position = Vector2(455, -20)
 
 [node name="fada" parent="." instance=ExtResource("8_xrk3d")]
-position = Vector2(355, 30)
-point_a_path = NodePath("../POINT_A_PATH1")
-point_b_path = NodePath("../POINT_B_PATH1")
-point_c_path = NodePath("../POINT_C_PATH2")
-point_d_path = NodePath("../POINT_D_PATH2")
+position = Vector2(334, 23)

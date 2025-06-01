@@ -1,6 +1,7 @@
 # Player.gd
 extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
 
 @export var speed = 200.0
 @export var jump_velocity = -400.0
@@ -64,6 +65,7 @@ func take_damage(amount):
 
 func die() -> void:
 	print("Player died!")
+	death_sound.play()
 	var player_death_position = global_position
 	var player_current_velocity = Vector2.ZERO
 	if is_instance_valid(collision_shape_2d):

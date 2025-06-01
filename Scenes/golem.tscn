@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://eqxoet8jvdj7"]
+[gd_scene load_steps=6 format=3 uid="uid://eqxoet8jvdj7"]
 
 [ext_resource type="Script" uid="uid://dywfotcmwiiu8" path="res://Scripts/golem.gd" id="1_6uy08"]
 [ext_resource type="Texture2D" uid="uid://bjo4532uyt5xa" path="res://Assets/golem.png" id="2_6uy08"]
+[ext_resource type="AudioStream" uid="uid://dqyok40wao057" path="res://Assets/Sound/golem atirar rapido cortado.mp3" id="3_lqe5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iifwq"]
 size = Vector2(18, 20)
@@ -29,6 +30,13 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6uy08")
 
+[node name="fireTimer" type="Timer" parent="Area2D"]
+wait_time = 1.5
+
+[node name="Fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lqe5q")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Area2D/golemTimer" to="." method="_on_golem_timer_timeout"]
+[connection signal="timeout" from="Area2D/fireTimer" to="." method="_on_fire_timer_timeout"]

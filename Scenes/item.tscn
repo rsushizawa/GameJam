@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://f5buhkdsab0x"]
 
 [ext_resource type="Script" uid="uid://bckirxb7mt4vh" path="res://Scripts/item.gd" id="1_76mu4"]
-[ext_resource type="Texture2D" uid="uid://gvdatt5v88bn" path="res://icon.svg" id="1_ys0gr"]
+[ext_resource type="Texture2D" uid="uid://c2vxyhsq3acv8" path="res://Assets/chave.png" id="2_76mu4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_76mu4"]
-radius = 14.0
+radius = 14.0357
 
 [node name="Item" type="Area2D"]
 script = ExtResource("1_76mu4")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, -2.38419e-07)
-scale = Vector2(0.21875, 0.21875)
-texture = ExtResource("1_ys0gr")
+position = Vector2(2, 0.999999)
+scale = Vector2(0.156085, 0.156085)
+texture = ExtResource("2_76mu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_76mu4")

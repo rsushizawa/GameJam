@@ -3,6 +3,8 @@ extends AnimatableBody2D
 const PROJETIL = preload("res://Scenes/projetil.tscn")
 @onready var timer: Timer = $Area2D/golemTimer
 @onready var player_nodes = get_tree().get_nodes_in_group("Player")
+@onready var fire: AudioStreamPlayer2D = $Fire
+@onready var fire_timer: Timer = $Area2D/fireTimer
 
 enum golem_state {NORMAL,SLEEP}
 var state: golem_state = golem_state.NORMAL
@@ -21,6 +23,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		if not timer.is_stopped():
 			print("Player Exited Fada Area 2D stoped firing")
 			timer.stop()
+			fire_timer.stop()
 
 func sleep():
 	print("Inside Sleep")
@@ -35,6 +38,11 @@ func sleep():
 
 
 func _on_golem_timer_timeout() -> void:
+	fire.play()
+	fire_timer.start()
+
+
+func _on_fire_timer_timeout() -> void:
 	var player = player_nodes[0]
 	var direction = player.global_position - global_position
 	var new_projectile = PROJETIL.instantiate()
