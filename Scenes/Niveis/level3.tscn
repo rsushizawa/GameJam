@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://j2i6lt2iegbb"]
+[gd_scene load_steps=8 format=3 uid="uid://j2i6lt2iegbb"]
 
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_5cmgs"]
 [ext_resource type="PackedScene" uid="uid://j01487ltwh4y" path="res://Scenes/alavanca.tscn" id="4_d6qkt"]
 [ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="4_ohci7"]
 [ext_resource type="PackedScene" uid="uid://drlrfgusiawgh" path="res://Scenes/portal.tscn" id="5_2u70s"]
-[ext_resource type="PackedScene" uid="uid://f5buhkdsab0x" path="res://Scenes/item.tscn" id="5_5cmgs"]
 [ext_resource type="PackedScene" uid="uid://eqxoet8jvdj7" path="res://Scenes/golem.tscn" id="6_wk86p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5ul7"]
@@ -168,11 +167,8 @@ limit_right = 0
 limit_bottom = 0
 
 [node name="Portal" parent="." instance=ExtResource("5_2u70s")]
-position = Vector2(-50, 480)
-next_level_scene_path = "uid://dhqq1gcjr1tll"
-
-[node name="Item" parent="." instance=ExtResource("5_5cmgs")]
-position = Vector2(-122, 356)
+position = Vector2(-58, 487)
+next_level_scene_path = "uid://txl53fr0g5x6"
 
 [node name="golem" parent="." instance=ExtResource("6_wk86p")]
 position = Vector2(-157, 479)

@@ -167,15 +167,11 @@ limit_right = 0
 limit_bottom = 0
 
 [node name="Portal" parent="." instance=ExtResource("5_hthbv")]
-position = Vector2(-45, 171)
+position = Vector2(-62, 174)
 next_level_scene_path = "uid://dixajdq531lss"
 
 [node name="fada" parent="." instance=ExtResource("3_fmsmh")]
 position = Vector2(-502, 307)
-point_a_path = NodePath("../A")
-point_b_path = NodePath("../B")
-point_c_path = NodePath("../C")
-point_d_path = NodePath("../D")
 
 [node name="Spike" parent="." instance=ExtResource("5_hmob5")]
 position = Vector2(-350, 319)

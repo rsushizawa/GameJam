@@ -167,7 +167,7 @@ limit_right = 0
 limit_bottom = 0
 
 [node name="Portal" parent="." instance=ExtResource("5_ruu38")]
-position = Vector2(-42, 286)
+position = Vector2(-56, 289)
 next_level_scene_path = "uid://j2i6lt2iegbb"
 
 [node name="Spike" parent="." instance=ExtResource("2_2863q")]
@@ -195,4 +195,4 @@ position = Vector2(105, -46)
 position = Vector2(216, -78)
 
 [node name="Item" parent="." instance=ExtResource("5_iiu4d")]
-position = Vector2(-134, 178)
+position = Vector2(-134, 175)
