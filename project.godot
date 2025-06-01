@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameJam"
-run/main_scene="uid://dnvrusyclpayn"
+run/main_scene="uid://bar2xwi0r2dty"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,14 +19,20 @@ config/icon="res://icon.svg"
 
 DeadBodyManager="*res://Scripts/DeadBodyManager.gd"
 GameManager="*res://GameManager.gd"
+Lvlmanager="*res://Scripts/LVLMANAGER.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=1080
+window/size/viewport_height=720
 
 [global_group]
 
 DeadBody=""
 DeadBodyFreeze=""
 Player=""
+
+[rendering]
+
+viewport/hdr_2d=true
+2d/snap/snap_2d_transforms_to_pixel=true

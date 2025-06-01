@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://eqxoet8jvdj7"]
+[gd_scene load_steps=3 format=3 uid="uid://eqxoet8jvdj7"]
 
 [ext_resource type="Script" uid="uid://dywfotcmwiiu8" path="res://Scripts/golem.gd" id="1_6uy08"]
 [ext_resource type="Texture2D" uid="uid://bjo4532uyt5xa" path="res://Assets/golem.png" id="2_6uy08"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifwq"]
-size = Vector2(18, 20)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6uy08"]
-radius = 101.045
 
 [node name="golem" type="AnimatableBody2D"]
 script = ExtResource("1_6uy08")
@@ -16,18 +10,15 @@ script = ExtResource("1_6uy08")
 scale = Vector2(0.047089, 0.047089)
 texture = ExtResource("2_6uy08")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_iifwq")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="golemTimer" type="Timer" parent="Area2D"]
 wait_time = 2.0
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_6uy08")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(5, -18)
+polygon = PackedVector2Array(38, -36, 40, 46, -170, 42, -173, -31)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

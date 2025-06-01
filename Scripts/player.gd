@@ -25,6 +25,11 @@ func _ready():
 	# Add player to a group if you haven't already (useful for spike detection etc.)
 	add_to_group("Player")
 
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	var scene_name = current_scene_path.get_file().get_basename()  # Ex: "level2"
+	Lvlmanager.lvl = scene_name
+	print("Cena atual definida como:", scene_name)
+
 
 func _physics_process(delta):
 	dead_body_freeze_nodes = get_tree().get_nodes_in_group("DeadBodyFreeze")

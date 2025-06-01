@@ -8,6 +8,7 @@ func _ready():
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		go_to_next_level()
+		
 
 func go_to_next_level():
 	if next_level_scene_path and not next_level_scene_path.is_empty():
