@@ -29,8 +29,6 @@ func _ready() -> void:
 	var start_position_set = false
 
 	if current_fada_state == FadaState.ACTIVATED:
-		var point_C: Marker2D = get_node_or_null(point_c_path) as Marker2D # Note: original script used point_C
-		var point_D: Marker2D = get_node_or_null(point_d_path) as Marker2D
 		if point_C and point_D:
 			initial_start_marker = point_C
 			initial_end_marker = point_D

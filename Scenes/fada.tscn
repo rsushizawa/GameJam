@@ -11,10 +11,6 @@ radius = 311.002
 
 [node name="fada" type="AnimatableBody2D"]
 script = ExtResource("1_6uy08")
-point_a_path = NodePath("POINT_A_PATH1")
-point_b_path = NodePath("POINT_B_PATH1")
-point_c_path = NodePath("POINT_C_PATH2")
-point_d_path = NodePath("POINT_D_PATH2")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-2, 0.999996)
@@ -29,16 +25,3 @@ shape = SubResource("RectangleShape2D_6uy08")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6uy08")
-
-[node name="POINT_A_PATH1" type="Marker2D" parent="."]
-position = Vector2(-120, 0)
-rotation = -3.14159
-
-[node name="POINT_B_PATH1" type="Marker2D" parent="."]
-position = Vector2(120, 0)
-
-[node name="POINT_C_PATH2" type="Marker2D" parent="."]
-position = Vector2(-100, -50)
-
-[node name="POINT_D_PATH2" type="Marker2D" parent="."]
-position = Vector2(100, -50)
