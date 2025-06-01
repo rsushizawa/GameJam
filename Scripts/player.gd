@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var dead_body_freeze_scene: PackedScene # Drag DeadBody.tscn here in the Inspector
 # You might want to get the spawn point dynamically or have a default
 var spawn_position = Vector2.ZERO # Default spawn, will be updated
-
+var number_items = 0
 @onready var dead_body_freeze_nodes = get_tree().get_nodes_in_group("DeadBodyFreeze")
 
 func _ready():
@@ -53,6 +53,10 @@ func _physics_process(delta):
 		DeadBodyManager.state = DeadBodyManager.Body_States.NORMAL
 
 	move_and_slide()
+
+func pickUpItem():
+	number_items +=1
+	print(number_items)
 
 func take_damage(amount):
 	print("Player took damage: ", amount)

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="GameJam"
-run/main_scene="uid://75y71bqykse6"
+run/main_scene="uid://dnvrusyclpayn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DeadBodyManager="*res://Scripts/DeadBodyManager.gd"
+GameManager="*res://GameManager.gd"
 
 [display]
 
