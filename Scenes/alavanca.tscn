@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://j01487ltwh4y"]
+
+[ext_resource type="Texture2D" uid="uid://bhwue6nbjj4cj" path="res://Scenes/icon.svg" id="1_oogwj"]
+[ext_resource type="Script" uid="uid://ct6l5u2efu1m1" path="res://Scripts/alavanca.gd" id="1_pijf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pijf5"]
+size = Vector2(61, 70)
+
+[node name="Alavanca" type="Area2D"]
+script = ExtResource("1_pijf5")
+
+[node name="Icon" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.546875, 0.476563)
+texture = ExtResource("1_oogwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pijf5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

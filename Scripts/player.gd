@@ -70,6 +70,8 @@ func die():
 		var player_current_velocity = velocity 
 		DeadBodyManager.request_spawn_dead_body(self,$CollisionShape2D,player_death_position,player_current_velocity)
 	# 4. Respawn the player
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	global_position = spawn_position
 	velocity = Vector2.ZERO # Reset velocity
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_INHERIT
 	print("Player respawned at: ", global_position)
