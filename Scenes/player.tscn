@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2jh04lx21h8p"]
 
 [ext_resource type="Script" uid="uid://cs4o2niq22k3i" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://gvdatt5v88bn" path="res://icon.svg" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://bi1671vxr7m78" path="res://Scenes/dead_body.tscn" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://cw13uyslboapm" path="res://Scenes/dead_body_freeze.tscn" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://gl3n2gjpx6yh" path="res://Assets/mago idle.png" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(46, 46)
@@ -14,10 +14,12 @@ dead_body_scene = ExtResource("2_vgqql")
 dead_body_freeze_scene = ExtResource("3_fkybt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.359375, 0.359375)
-texture = ExtResource("2_6t5aa")
+position = Vector2(1, -16)
+scale = Vector2(0.0986064, 0.0986064)
+texture = ExtResource("4_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Camera2D" type="Camera2D" parent="."]
