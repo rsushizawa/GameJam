@@ -11,6 +11,9 @@ const PROJETIL = preload("res://Scenes/projetil.tscn")
 @onready var point_a: Marker2D = get_node_or_null(point_a_path)
 @onready var point_b: Marker2D = get_node_or_null(point_b_path)
 
+enum fada_state {NORMAL,SLEEP}
+var state: fada_state = fada_state.NORMAL
+
 var current_target_is_b: bool = true
 func _ready() -> void:
 	if not point_a or not point_b:
@@ -64,3 +67,14 @@ func _on_tween_completed():
 	current_target_is_b = not current_target_is_b
 	# Move to the new target
 	move_to_target()
+
+func sleep():
+	print("Inside Sleep")
+	if state == fada_state.NORMAL:
+		print("Inside Sleep SLEEP")
+		state = fada_state.SLEEP
+		process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		print("Inside Sleep NORMAL")
+		state = fada_state.NORMAL
+		process_mode = Node.PROCESS_MODE_ALWAYS

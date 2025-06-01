@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnvrusyclpayn"]
+[gd_scene load_steps=10 format=3 uid="uid://dnvrusyclpayn"]
 
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_rcdo1"]
 [ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="2_dvkc1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="4_ir1uw"]
 [ext_resource type="PackedScene" uid="uid://drlrfgusiawgh" path="res://Scenes/portal.tscn" id="5_dvkc1"]
 [ext_resource type="PackedScene" uid="uid://f5buhkdsab0x" path="res://Scenes/item.tscn" id="6_qp627"]
+[ext_resource type="PackedScene" uid="uid://j01487ltwh4y" path="res://Scenes/alavanca.tscn" id="7_ir1uw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qp627"]
 texture = ExtResource("1_rcdo1")
@@ -171,3 +172,7 @@ position = Vector2(57, 18)
 
 [node name="Item2" parent="." instance=ExtResource("6_qp627")]
 position = Vector2(-27, -39)
+
+[node name="Alavanca" parent="." node_paths=PackedStringArray("fada") instance=ExtResource("7_ir1uw")]
+position = Vector2(559, 28)
+fada = NodePath("../Fada")
