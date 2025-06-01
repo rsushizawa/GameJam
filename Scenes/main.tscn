@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d1o7dwy048khq" path="res://Assets/world_tileset.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://d2jh04lx21h8p" path="res://Scenes/player.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://yhr7bloanpl2" path="res://Scenes/spike.tscn" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/fada.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dleek3bm1c0d1" path="res://Scenes/golem.tscn" id="6_21xkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_jjgbg")

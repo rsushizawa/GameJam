@@ -14,3 +14,9 @@ func _ready():
 func _on_LifespanTimer_timeout():
 	about_to_despawn.emit(self) # Emit the signal *before* queue_free
 	queue_free() # Remove the dead body from the scene
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		body.velocity.y = body.velocity.y - 500
+		queue_free()

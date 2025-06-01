@@ -7,7 +7,7 @@ extends Node
 enum Body_States {NORMAL,FREEZE}
 var state: Body_States = Body_States.NORMAL
 # Call this function to spawn a new dead body
-func request_spawn_dead_body(_body: Node2D,_colisionshape: Node2D, spawn_position: Vector2, initial_velocity: Vector2):
+func request_spawn_dead_body(body: Node2D,player_spawn: Vector2, spawn_position: Vector2, initial_velocity: Vector2):
 	var dead_body_nodes = get_tree().get_nodes_in_group("DeadBody")
 	var active_bodies: Array[Node] = dead_body_nodes # To store references to active dead bodies
 	if not dead_body_scene:
@@ -29,19 +29,12 @@ func request_spawn_dead_body(_body: Node2D,_colisionshape: Node2D, spawn_positio
 		new_body_instance = dead_body_freeze_scene.instantiate()
 	else:
 		new_body_instance = dead_body_scene.instantiate()
-		new_body_instance.linear_velocity = initial_velocity
+		new_body_instance.linear_velocity = Vector2.ZERO
 
 	if new_body_instance:
-		new_body_instance.global_position.y = spawn_position.y
+		new_body_instance.global_position.y = spawn_position.y - 30
 		new_body_instance.global_position.x = spawn_position.x
-		# Add to the current scene
+		# Add to the current sc
+		body.global_position = player_spawn
+		body.velocity = Vector2.ZERO # Reset velocity
 		get_tree().current_scene.add_child(new_body_instance)
-		active_bodies.append(new_body_instance) # Add to our tracking list (at the end)
-
-	elif new_body_instance: # If it's not a RigidBody2D but still valid
-		new_body_instance.global_position = spawn_position
-		get_tree().current_scene.add_child(new_body_instance)
-		active_bodies.append(new_body_instance)
-		print("DeadBodyManager: Spawned dead body is not a RigidBody2D. Limited functionality.")
-	else:
-		print("DeadBodyManager: Failed to instance dead_body_scene.")
